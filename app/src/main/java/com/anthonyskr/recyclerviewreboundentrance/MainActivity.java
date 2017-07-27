@@ -6,6 +6,10 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+/**
+ * Animation on RecyclerView item's entrance with rebound effect
+ * <a href="http://anthony-skr.com/article/recyclerview-items-animation-with-rebound-effect"></a>
+ */
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
