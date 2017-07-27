@@ -44,6 +44,7 @@ public class RecyclerViewAnimator {
 
     public RecyclerViewAnimator(RecyclerView recyclerView) {
         mRecyclerView = recyclerView;
+        // info Init physics system
         mSpringSystem = SpringSystem.create();
 
         // Use height of RecyclerView to slide-in items from bottom.
@@ -54,7 +55,7 @@ public class RecyclerViewAnimator {
 
     public void onCreateViewHolder(View item) {
         /**
-         * mFirstViewInit is used because we only want to show animation once at initialization.
+         * info - mFirstViewInit is used because we only want to show animation once at initialization.
          * (onCreateViewHolder can be called after if you use multiple view types).
          */
         if (mFirstViewInit) {
@@ -83,6 +84,7 @@ public class RecyclerViewAnimator {
         Runnable startAnimation = new Runnable() {
             @Override
             public void run() {
+                // Configure new spring
                 SpringConfig config = new SpringConfig(tension, friction);
                 Spring spring = mSpringSystem.createSpring();
                 spring.setSpringConfig(config);
